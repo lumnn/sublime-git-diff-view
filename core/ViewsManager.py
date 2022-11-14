@@ -1,5 +1,6 @@
 import sublime
 
+
 class ViewsManager:
     ''' Responsible for storing views and reopening them later. '''
 
@@ -33,8 +34,8 @@ class ViewsManager:
     def restore(self):
         views = self.get_views() or []
         for file_name in views:
-                if file_name:
-                    self.window.open_file(file_name)
+            if file_name:
+                self.window.open_file(file_name)
 
         last_active_view = self._get_last_active_view()
         if last_active_view:
@@ -57,7 +58,7 @@ class ViewsManager:
 
         last_active_panel = self.last_active_panel.get(self.window.id())
         if last_active_panel:
-            self.window.run_command("show_panel", { "panel": last_active_panel })
+            self.window.run_command("show_panel", {"panel": last_active_panel})
 
         self._clear_state()
 
@@ -106,9 +107,9 @@ class ViewsManager:
         self.previous_views[self.window.id()] = []
 
         for view in views:
-                self.previous_views[self.window.id()].append(view.file_name())
-                self.window.focus_view(view)
-                self.window.run_command('close_file')
+            self.previous_views[self.window.id()].append(view.file_name())
+            self.window.focus_view(view)
+            self.window.run_command('close_file')
 
     def _clear_state(self):
         self.previous_views[self.window.id()] = []

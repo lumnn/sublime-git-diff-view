@@ -3,6 +3,7 @@ from .Formated import Formated
 
 prev_formated_git_stauts = ''
 
+
 def get_git_status_view():
     ''' Return the git status View '''
     window = sublime.active_window()
@@ -11,6 +12,7 @@ def get_git_status_view():
         if view.name() == 'Git Status':
             return view
     return None
+
 
 class GitStatusView:
     view_name = "Git Status"

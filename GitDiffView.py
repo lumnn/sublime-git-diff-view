@@ -19,6 +19,7 @@ from .core.FileSyntax import FileSyntax
 
 STOP_INTERVAL = False
 
+
 def set_interval(fn):
     def interval():
         fn()
@@ -31,7 +32,7 @@ def refresh_list():
     ''' Refresh git status view content'''
     window = sublime.active_window()
     gsv = get_git_status_view()  # type: View
-    if gsv is None: 
+    if gsv is None:
         return
 
     git_statuses = Command(window).git_statuses()
@@ -46,9 +47,9 @@ def refresh_list():
 
 
 class UpdateStatusViewCommand(sublime_plugin.TextCommand):
-    def run(self, edit, content):        
+    def run(self, edit, content):
         gsv = get_git_status_view()  # type: View
-        if gsv is None: 
+        if gsv is None:
             return
 
         gsv.set_read_only(False)
@@ -59,7 +60,7 @@ class UpdateStatusViewCommand(sublime_plugin.TextCommand):
 class ClearGitDiffView(sublime_plugin.TextCommand):
     def run(self, edit):
         gdv = get_git_diff_view()  # type: View
-        if gdv is None: 
+        if gdv is None:
             return
 
         gdv.set_read_only(False)
@@ -214,10 +215,11 @@ class UpdateGitDiffViewCommand(sublime_plugin.TextCommand):
             filter(lambda view: view.name() == view_name, views)
         )[0]
 
+
 def plugin_loaded():
     gsv = get_git_status_view()
 
-    # If status view is open when sublime starts, 
+    # If status view is open when sublime starts,
     # setup listener for refreshing the list
     if gsv is not None:
         set_interval(refresh_list)

@@ -1,6 +1,7 @@
 import sublime
 from .Command import Command
 
+
 class Formated:
     def __init__(self, window):
         self.window = window

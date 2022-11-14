@@ -8,7 +8,7 @@
         "keys": ["d"],
         "command": "git_diff_view_dismiss_changes",
         "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}]
-    }, 
+    },
     {
         "keys": ["g"],
         "command": "git_diff_view_goto_file",

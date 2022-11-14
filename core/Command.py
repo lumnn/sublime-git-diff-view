@@ -95,7 +95,7 @@ class Command:
             output = self.show_added_file(file_name)
         return output
 
-    def git_diff_file_staged(self, file_name, staged = True):
+    def git_diff_file_staged(self, file_name, staged=True):
         file_name = self.escape_special_characters(file_name)
         staged_arg = '--staged' if staged else ''
         cmd = ['git diff --no-color {} -- {}'.format(staged_arg, file_name)]
