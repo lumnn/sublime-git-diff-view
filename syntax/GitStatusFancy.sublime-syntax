@@ -71,3 +71,4 @@ contexts:
       pop: true
       captures:
         1: comment
+        2: markup.bold
