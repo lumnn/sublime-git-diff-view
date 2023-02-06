@@ -24,8 +24,8 @@ def set_interval(fn):
     def interval():
         fn()
         if not STOP_INTERVAL:
-            sublime.set_timeout(interval, 800)
-    sublime.set_timeout(interval, 800)
+            sublime.set_timeout(interval, 2000)
+    sublime.set_timeout(interval, 2000)
 
 
 def refresh_list():

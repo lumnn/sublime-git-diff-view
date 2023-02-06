@@ -33,10 +33,12 @@ class Formated:
             ))
 
         help = [
+            "",
             "-------------------------------",
             "[a] stage/unstage file",
             "[d] dismiss changes to file",
-            "[g] go to file"
+            "[g] go to file",
+            "[r] reload this view"
         ]
         for option in help:
             formated_output.append(option)
