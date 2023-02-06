@@ -1,0 +1,5 @@
+[
+    {"command": "move_to", "args": {"to": "hardbol"}},
+    {"command": "move", "args": {"by": "lines", "forward": false}},
+    {"command": "move_to", "args": {"to": "hardbol"}},
+]

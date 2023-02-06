@@ -13,5 +13,32 @@
         "keys": ["g"],
         "command": "git_diff_view_goto_file",
         "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}]
-    }
+    },
+    {
+        "keys": ["r"],
+        "command": "git_diff_view_reload",
+        "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}]
+    },
+    {
+        "keys": ["up"],
+        "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}],
+        "command": "run_macro_file",
+        "args": {"file": "res://Packages/GitDiffView/LineUp.sublime-macro"}
+    },
+    {
+        "keys": ["down"],
+        "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}],
+        "command": "run_macro_file",
+        "args": {"file": "res://Packages/GitDiffView/LineDown.sublime-macro"}
+    },
+    {
+        "keys": ["right"],
+        "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}],
+        "command": "move_to", "args": {"to": "hardeol"},
+    },
+    {
+        "keys": ["left"],
+        "context": [{"key": "selector", "operator": "equal", "operand": "text.gsf"}],
+        "command": "move_to", "args": {"to": "hardbol"},
+    },
 ]
